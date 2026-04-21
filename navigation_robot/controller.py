@@ -27,18 +27,6 @@ class controller(Node):
 
 		self.publisher.publish(cmd)
 
-		#if distance < 20.0:
-		#	self.get_logger().info("STOP - Object too close")
-		#	command_msg.data = "STOP"
-		#	self.publisher.publish(command_msg)
-		#elif distance < 50.0:
-		#	self.get_logger().info("Reduce speed - aproaching object")
-		#	command_msg.data = "Reduce speed"
-		#	self.publisher.publish(command_msg)
-		#else:
-		#	self.get_logger().info("Top speed - Path clear")
-		#	command_msg.data = "Top speed"
-		#	self.publisher.publish(command_msg)
 
 def main(args=None):
 	rclpy.init(args=args)
