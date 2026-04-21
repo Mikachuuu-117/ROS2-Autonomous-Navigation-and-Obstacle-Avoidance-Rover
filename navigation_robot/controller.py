@@ -20,10 +20,16 @@ class controller(Node):
 		cmd = Twist()
 
 		speed = max(0.0, min(1.0, distance / 100.0))
-
 		cmd.linear.x = speed
 
-		self.get_logger().info(f"Distance: {distance:.2f} -> Speed: {speed:.2f}")
+		if distance < 20.0:
+			cmd.angular.z = 1.0
+		elif distance < 50.0:
+			cmd.angular.z = 0.5
+		else:
+			cmd.angular.z = 0.0
+
+		self.get_logger().info(f"Distance: {distance:.2f} -> Speed: {speed:.2f}, Turn: {cmd.angular.z:.2f}")
 
 		self.publisher.publish(cmd)
 

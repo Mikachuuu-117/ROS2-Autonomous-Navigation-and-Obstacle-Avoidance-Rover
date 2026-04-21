@@ -19,15 +19,14 @@ private:
 	void move_robot(const geometry_msgs::msg::Twist::SharedPtr msg)
 	{
 		float speed = msg->linear.x;
+		float turn = msg->angular.z;
 
-		if (speed == 0.0)
-		{
-			RCLCPP_INFO(this->get_logger(), "STOP");
-		}
-		else
-		{
-			RCLCPP_INFO(this->get_logger(), "speed: %.2f", speed);
-		}
+		RCLCPP_INFO(
+			this->get_logger(),
+			"Speed: %.2f | Turn: %.2f",
+			speed,
+			turn
+		);
 	}
 
 	rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr subscription_;
