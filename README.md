@@ -8,12 +8,12 @@ This project is an implementation of a multi-node ROS2 system using both Python 
 - Controller node (Python)
 - Motor node (C++)
 - Uses geometry_msgs/Twist for velocity control
-- Has basic obstacle avoidance logic
+- Has multi directional sensing and obstacle avoidance logic
 
 ## Architecture
 Sensor --> Controller --> Motor
 
 # Future work
-- Multi-directional sensing
+- Sensor noise simulation
 - Object tracking
 - SLAM integration
