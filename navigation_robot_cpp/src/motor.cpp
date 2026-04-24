@@ -24,8 +24,8 @@ private:
 		RCLCPP_INFO(
 			this->get_logger(),
 			"Speed: %.2f | Turn: %.2f",
-			speed,
-			turn
+			msg->linear.x,
+			msg->angular.z
 		);
 	}
 
