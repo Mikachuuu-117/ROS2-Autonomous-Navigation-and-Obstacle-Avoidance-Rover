@@ -32,7 +32,7 @@ class controller(Node):
 
 	def control_loop(self):
 		cmd = Twist()
-		cmd.linear.x = 0.5
+		cmd.linear.x = 1.0
 		cmd.angular.z = 0.0
 
 		if self.front < 0.5:

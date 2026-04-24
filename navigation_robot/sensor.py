@@ -21,10 +21,10 @@ class Sensor(Node):
 			msg.data = random.uniform(0.2, 2.0)
 
 		elif self.direction == "left":
-			msg.data = random.uniform(0.4, 0.6)
+			msg.data = random.uniform(0.35, 2.5)
 
 		elif self.direction == "right":
-			msg.data = random.uniform(0.4, 0.6)
+			msg.data = random.uniform(0.35, 2.5)
 
 		self.publisher.publish(msg)
 		self.get_logger().info(f"{self.direction}: {msg.data:.2f}")
