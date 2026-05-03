@@ -30,13 +30,46 @@ Sensors (Python) -> Controller (Python) -> /Cmd_vel -> Motor Node (C++) -> Odome
 	- Odometry trail
 - Launch file for single command execution
 
-## Demo
-Run the system:#
+## Run
+Clone the repository:
+- cd ~/ros2_ws/src
+- git clone https://github.com/Mikachuuu-117/ROS2-Autonomus-Navigation-and-Obstacle-Avoidance-Rover.git
 
-cd ~/ros2_ws
-colcon build
-source install/setup.bash
-ros2 launch navigation_robot demo.launch.py
+Build workspace:
+- cd ~/ros2_ws
+- colcon build
+- source install/setup.bash
+
+Launch the full system:
+- ros2 launch navigation_robot demo.launch.py
+
+This will start:
+- Front, Left and Right sensor nodes
+- Controller node
+- Motor node
+- Odometry + TF
+- Robot model
+- RViz (pre-configured)
+
+
+If you want to run the Motor node so that it is easier to see:
+- Open new Terminal
+	- cd ~/ros2_ws
+	- source install/setup.bash
+	- ros2 run navigation_robot_cpp motor_node
+
+
+Useful debug commands:
+- Check active topics:
+	- ros2 topic list
+- View velocity commands:
+	- ros2 topic echo /cmd_vel
+- View sensor data:
+	- ros2 topic echo /distance_front
+
+
+Stop the system:
+- Press: Ctrl + C in the terminal
 
 ## Expected behavior
 - Rover moves forward autonomously
