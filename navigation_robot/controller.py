@@ -32,7 +32,7 @@ class controller(Node):
 
 	def control_loop(self):
 		cmd = Twist()
-		cmd.linear.x = 1.0
+		cmd.linear.x = 0.5
 		cmd.angular.z = 0.0
 
 		if self.front < 0.5:
@@ -42,10 +42,10 @@ class controller(Node):
 			cmd.linear.x = 0.0    # Stop if an obstacle is close on both sides
 
 		elif self.left < 0.5:
-			cmd.angular.z = -0.5  # Turning right
+			cmd.angular.z = -1.0  # Turning right
 
 		elif self.right < 0.5:
-			cmd.angular.z = 0.5   # Turning left
+			cmd.angular.z = 1.0   # Turning left
 
 		self.publisher.publish(cmd)
 		self.get_logger().info(

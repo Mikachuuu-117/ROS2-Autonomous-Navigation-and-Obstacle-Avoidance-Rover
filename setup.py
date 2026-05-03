@@ -10,6 +10,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+	('share/' + package_name, ['launch/demo.launch.py']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -27,6 +28,7 @@ setup(
 		'sensor = navigation_robot.sensor:main',
 		'controller = navigation_robot.controller:main',
 		'logger = navigation_robot.logger:main',
+		'odom_node = navigation_robot.odom_node:main',
         ],
     },
 )
